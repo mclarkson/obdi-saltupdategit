@@ -18,30 +18,10 @@
 #
 # saltconfigserver plugin
 
-#
-# Arg1 - the name of the root owned, 0600 permission, file with the
-#        json encoded data for initial login, i.e.
-#
-#            {"Login":"admin","Password":"admin"}
-#
-
 [[ -z $guid ]] && {
   echo "ERROR: environment variable 'guid' must be set."
   exit 1
 }
-
-# TODO : read pw file
-#[[ -z $1 ]] && {
-#    echo "ERROR: Arg1 - name of file containing json credentials data."
-#    exit 1
-#}
-#
-#[[ ! -r "$1" ]] && {
-#    echo "ERROR: Could not find file '$1'. Aborting"
-#    exit 2
-#}
-#
-#pwfile="$1"
 
 ##
 ## TODO: This plugin depends on salt
@@ -50,22 +30,12 @@
 proto="https"
 opts="-k -s" # don't check ssl cert, silent
 ipport="127.0.0.1:443"
-#guid=`curl $opts -f -d @$pwfile \
-#    $proto://$ipport/api/login | grep -o "[a-z0-9][^\"]*"`
-
-#[[ $? -ne 0 ]] && {
-#    curl $opts -s -d @$pwfile $proto://$ipport/api/login
-#    echo "Login error"
-#    exit 1
-#}
-
-#echo "GUID=$guid"
 
 #
 # Create a temporary file and a trap to delete it
 #
 
-t="/tmp/install_saltconfigserver_$$"
+t="/tmp/install_saltupdategit_$$"
 touch $t
 [[ $? -ne 0 ]] && {
     echo "Could not create temporary file. Aborting."
