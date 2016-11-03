@@ -1,0 +1,6 @@
+{
+  "name": "Obdi-saltupdategit",
+  "tagline": "Obdi plugin to update a local git repository from a remote git repository and version it.",
+  "body": "# obdi-saltupdategit\r\nObdi plugin to update a local git repository from a remote git repository and version it.\r\n\r\n## Screenshot\r\n\r\n![](images/saltupdategit.png?raw=true)\r\n\r\n## What is it?\r\n\r\nAn Obdi plugin to view jobs stored on a Salt Stack server.\r\n\r\nSee [obdi-salt-repository](https://github.com/mclarkson/obdi-salt-repository)\r\nfor more information.\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
